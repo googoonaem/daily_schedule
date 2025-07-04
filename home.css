@@ -1,0 +1,124 @@
+div:has(#login-form) {
+  position: relative;
+  height: 100vh;
+}
+
+#login-form {
+  display: grid;
+  gap: 10px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+#clock {
+  height: 200px;
+  font-size: 50px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+#login-form > input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2); /* 안쪽 빛 */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding-left: 10px;
+}
+#login-form > input::placeholder {
+  color: black;
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+}
+#login-form::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -130%;
+  width: 300%;
+  height: 400%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 60%);
+  transform: rotate(170deg);
+  pointer-events: none;
+}
+#login-form > input:focus {
+  outline: none;
+}
+#login-form > input[type='submit'] {
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  color: black;
+  height: 60%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#greeting {
+  position: absolute;
+  top: 400px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+#main-container {
+  position: absolute;
+  right: 0;
+  bottom: 18%;
+  z-index: 20;
+  display: grid;
+  gap: 10px;
+  margin: 30px;
+  justify-content: space-around;
+}
+
+#main-container > div {
+  width: 200px;
+  height: 80px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2); /* 안쪽 빛 */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.2s;
+  transform-origin: right center;
+}
+#main-container > div:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#main-container > div > span {
+  font-size: 18px;
+}
+#main-container > div#popup {
+  width: 50vw;
+  height: 700px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+#main-container > div#popup:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

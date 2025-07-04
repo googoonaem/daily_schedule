@@ -4,14 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="home.css" />
     <title>Daily Routine</title>
   </head>
   <body>
-    <form id="login-form">
-      <input type="text" name="id" />
-      <input type="text" name="pw" />
-      <input type="submit" value="Login" />
-    </form>
+    <div class="sky">
+      <svg class="background">
+        <defs>
+          <linearGradient id="grad1" x2="0%" y2="100%">
+            <stop stop-color="#213">
+              <animate
+                attributeName="stop-color"
+                values="#123155; #88A6D9; #556B91; #4D86E7; #036CDC; #024D9C; #2F3260; #0C1D2D; #222127; #222127; #222127; #222127; #123155;"
+                dur="60s"
+                repeatCount="indefinite"
+              ></animate>
+            </stop>
+          </linearGradient>
+        </defs>
+        <rect class="st0" fill="url(#grad1)" />
+      </svg>
+      <svg class="background-gradient">
+        <defs>
+          <linearGradient id="grad2">
+            <stop stop-color="#213">
+              <animate
+                attributeName="stop-color"
+                values="#DFC18E; #DFC18B; #88A0BE; #BFE0F7; #002C9C; #A26248; #F57E3F; #295672; #0F2654; #0F2654; #0F2654; #000; #DFC18E;"
+                dur="60s"
+                repeatCount="indefinite"
+              ></animate>
+            </stop>
+          </linearGradient>
+        </defs>
+        <rect class="st0" fill="url(#grad2)" />
+      </svg>
+    </div>
+    <canvas width="1500" height="1000" id="background-canvas"></canvas>
+    <h1 id="greeting" class="hidden"></h1>
+    <h2 id="clock">00:00:00</h2>
+    <div>
+      <form id="login-form">
+        <input type="text" placeholder="Please write your name" />
+        <input type="submit" value="Next" />
+      </form>
+    </div>
+    <div id="main-container" class="hidden">
+      <div id="popup" class="hidden fixed-center">
+        <!-- 내용이 여기에 동적으로 바뀜 -->
+      </div>
+      <div>
+        <div class="hidden content">
+          <div>
+            <form>
+              <input type="text" placeholder="Write a todo" />
+              <input type="submit" value="➕" />
+            </form>
+            <ul></ul>
+          </div>
+        </div>
+        <span>morning routine</span>
+      </div>
+      <div>
+        <div class="hidden content">study 1</div>
+        <span>study_1</span>
+      </div>
+      <div>
+        <div class="hidden content">study 2</div>
+        <span>study_2</span>
+      </div>
+      <div>
+        <div class="hidden content">study 3</div>
+        <span>study_3</span>
+      </div>
+      <div>
+        <div class="hidden content">break</div>
+        <span>break</span>
+      </div>
+      <div>
+        <div class="hidden content">workout</div>
+        <span>workout</span>
+      </div>
+    </div>
+    <script src="background.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
